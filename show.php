@@ -5,6 +5,7 @@
 * @license BSD License - www.opensource.org/licenses/bsd-license.php
 *
 * Copyright (c) 2012 Sayak Banerjee <sayakb@kde.org>
+* Copyright (c) 2013 Athmane Madjoudj <athmane@fedoraproject.org>
 * All rights reserved. Do not remove this copyright notice.
 */
 
@@ -227,6 +228,10 @@ $code_data = (empty($mode) ? $geshi->parse_code() : htmlspecialchars($row['data'
 $lang->escape($code_data);
 $skin->escape($code_data);
 
+// Shorten the current URL
+$url_shortener = new URLShortener();
+$short_url = $url_shortener->shorten($nav->get_paste($row['id'], $hash, $project, true, ''));
+
 // Assign template variables
 $skin->assign(array(
     'paste_id'          => $row['id'],
@@ -240,6 +245,7 @@ $skin->assign(array(
     'share_title'       => urlencode($lang->get('paste') . ' #' . $row['id']),
     'error_visibility'  => 'hidden',
     'geshi_stylesheet'  => $geshi->get_stylesheet(),
+    'short_url'         => $short_url,
 ));
 
 // Let's output the page now

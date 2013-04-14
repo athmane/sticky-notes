@@ -5,4 +5,5 @@
     <timestamp>[[paste_timestamp]]</timestamp>
     <language>[[paste_lang]]</language>
     <data>[[paste_data]]</data>
+    <shorturl>[[short_url]]</shorturl>
 </result>

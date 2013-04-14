@@ -24,6 +24,7 @@ include_once('classes/class_skin.php');
 include_once('classes/class_api.php');
 include_once('classes/class_nav.php');
 include_once('classes/class_spamguard.php');
+include_once('classes/class_urlshort.php');
 include_once('addons/geshi/geshi.php');
 
 // We need to instantiate the GSoD class first, just in case!
